@@ -1,6 +1,6 @@
 # openclaw-youtube-transcribe
 
-![openclaw-youtube-transcribe banner](./assets/banner.svg)
+![openclaw-youtube-transcribe banner](./assets/banner-zh.svg)
 
 一个用于 **OpenClaw** 的小技能：把 YouTube 视频链接通过 `yt-dlp` + 本地 `Whisper CLI` 转成离线转写文本。
 
