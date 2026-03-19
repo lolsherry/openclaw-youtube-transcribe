@@ -1,16 +1,19 @@
 # openclaw-youtube-transcribe
 
-A small OpenClaw skill for turning a YouTube URL into local transcripts with `yt-dlp` + OpenAI Whisper CLI.
+An OpenClaw skill for turning a YouTube URL into local transcripts with `yt-dlp` + OpenAI Whisper CLI.
 
-## What it does
+简体中文说明见：[README.zh-CN.md](./README.zh-CN.md)
 
-- downloads audio from a single YouTube video
-- converts/transcodes to `m4a`
-- runs local Whisper transcription
-- keeps `txt`, `srt`, `vtt`, `tsv`, and `json` outputs together
-- stores each video in its own folder
+## Features
 
-Default output root:
+- Download audio from a single YouTube video
+- Transcode/extract to `m4a`
+- Run local Whisper transcription
+- Keep `txt`, `srt`, `vtt`, `tsv`, and `json` outputs together
+- Store each video in its own folder
+- Use a simple shell script that also works outside OpenClaw
+
+## Default output
 
 ```text
 ${HOME}/Documents/youtube-transcripts
@@ -47,7 +50,9 @@ Example on macOS with Homebrew:
 brew install yt-dlp ffmpeg openai-whisper
 ```
 
-## Run directly
+## Quick start
+
+Run directly:
 
 ```bash
 ./skills/youtube-transcribe/scripts/transcribe_youtube.sh "https://www.youtube.com/watch?v=..."
@@ -64,12 +69,55 @@ Optional flags:
   --out-dir "/path/to/output"
 ```
 
-## Use as an OpenClaw workspace skill
+Defaults:
 
-Copy or symlink `skills/youtube-transcribe` into an OpenClaw workspace `skills/` directory, or install it through your preferred skill workflow.
+- `--lang zh`
+- `--task transcribe`
+- `--model small`
+- `--format all`
+
+## Use as an OpenClaw skill
+
+Copy or symlink `skills/youtube-transcribe` into an OpenClaw workspace `skills/` directory.
+
+Example:
+
+```bash
+mkdir -p /path/to/workspace/skills
+cp -R ./skills/youtube-transcribe /path/to/workspace/skills/
+```
+
+Then start a new OpenClaw session so the skill is picked up cleanly.
+
+## Example
+
+```bash
+./skills/youtube-transcribe/scripts/transcribe_youtube.sh \
+  "https://www.youtube.com/watch?v=vimU_EHAuAs" \
+  --lang zh \
+  --model small
+```
 
 ## Notes
 
 - `--no-playlist` is enforced to avoid accidental playlist downloads.
-- The default language is `zh`; use `--lang auto` for mixed/unknown language videos.
-- The script is designed to be simple and local-first rather than highly optimized.
+- Use `--lang auto` when the language is mixed or unknown.
+- The first Whisper run can be slow because the model may need to be downloaded.
+- CPU-only runs work fine, but they are slower than GPU-backed runs.
+- The script is intentionally simple and local-first rather than highly optimized.
+
+## Repo contents
+
+```text
+README.md
+README.zh-CN.md
+skills/
+  youtube-transcribe/
+    SKILL.md
+    scripts/
+      transcribe_youtube.sh
+```
+
+## License
+
+MIT
