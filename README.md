@@ -98,6 +98,11 @@ Then start a new OpenClaw session so the skill is picked up cleanly.
   --model small
 ```
 
+See a real sample run and transcript excerpt:
+
+- [examples/example-output.md](./examples/example-output.md)
+- [examples/example-output.zh-CN.md](./examples/example-output.zh-CN.md)
+
 ## Notes
 
 - `--no-playlist` is enforced to avoid accidental playlist downloads.

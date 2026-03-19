@@ -98,6 +98,11 @@ cp -R ./skills/youtube-transcribe /path/to/workspace/skills/
   --model small
 ```
 
+可以直接看真实样例输出：
+
+- [examples/example-output.md](./examples/example-output.md)
+- [examples/example-output.zh-CN.md](./examples/example-output.zh-CN.md)
+
 ## 说明
 
 - 脚本强制使用 `--no-playlist`，避免误下载整个播放列表。
