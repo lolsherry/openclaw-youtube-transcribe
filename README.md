@@ -1,5 +1,7 @@
 # openclaw-youtube-transcribe
 
+![openclaw-youtube-transcribe banner](./assets/banner.svg)
+
 An OpenClaw skill for turning a YouTube URL into local transcripts with `yt-dlp` + OpenAI Whisper CLI.
 
 简体中文说明见：[README.zh-CN.md](./README.zh-CN.md)
