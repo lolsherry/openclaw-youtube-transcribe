@@ -1,12 +1,12 @@
 # 示例输出
 
-这一页展示一个公开 YouTube 视频的真实运行样例。
+这一页展示的是一个**脱敏后的示例**，用于说明这个 skill 的输出结构，以及转写文本大概会长什么样。
 
 ## 示例命令
 
 ```bash
 ./skills/youtube-transcribe/scripts/transcribe_youtube.sh \
-  "https://www.youtube.com/watch?v=vimU_EHAuAs" \
+  "https://www.youtube.com/watch?v=EXAMPLE_ID" \
   --lang zh \
   --model small
 ```
@@ -15,7 +15,7 @@
 
 ```text
 ${HOME}/Documents/youtube-transcripts/
-  比特币现在下结论看大跌为时过早，回踩依旧可能大 [vimU_EHAuAs]/
+  Example Video Title [EXAMPLE_ID]/
     audio/
       audio.m4a
       audio.info.json
@@ -27,21 +27,19 @@ ${HOME}/Documents/youtube-transcripts/
       audio.json
 ```
 
-## 转写片段
+## 示例转写片段
 
-摘自 `audio.txt`：
+摘自 `audio.txt`（仅为示意，不对应真实已处理视频内容）：
 
-> 大家好,我是依依,現在是新加坡時間早上的8點42分  
-> 比特幣限價位於7萬1000多,這個價格區域位置  
-> 在過去的行情當中,我們都是以看漲為主  
-> 在昨天的視頻當中,我們明確說明了智力選擇性可能回調  
-> 還是說智力繼續開始下跌  
-> 我們要關注周限級別能否站穩這個通道之上  
-> 但是也關鍵的要位於這個72800需求其實點跌破  
-> 說明結構已經轉空,我們發現從昨天的7萬4000多跌下來
+> 大家好，欢迎回来。  
+> 这一段内容主要是按步骤说明核心观点。  
+> 先回顾当前情况和几个关键前提。  
+> 然后比较几种可能的走向以及它们各自的取舍。  
+> 最后总结更实用的下一步行动。
 
 ## 说明
 
 - 第一次运行 Whisper 可能会更慢，因为需要先下载模型。
 - 纯 CPU 机器也能正常运行，只是速度会比 GPU 慢。
-- 不同模型和语言参数下，转写内容可能会有些细微差异。
+- 实际转写内容会随着视频、模型和语言参数不同而变化。
+- 这里使用的是脱敏示例，而不是之前处理过的真实视频转写片段。

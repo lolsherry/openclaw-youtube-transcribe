@@ -1,12 +1,12 @@
 # Example output
 
-This page shows a real example of the skill running on a public YouTube video.
+This page shows a **sanitized example** of how the skill organizes files and what a transcript output may look like.
 
 ## Example command
 
 ```bash
 ./skills/youtube-transcribe/scripts/transcribe_youtube.sh \
-  "https://www.youtube.com/watch?v=vimU_EHAuAs" \
+  "https://www.youtube.com/watch?v=EXAMPLE_ID" \
   --lang zh \
   --model small
 ```
@@ -15,7 +15,7 @@ This page shows a real example of the skill running on a public YouTube video.
 
 ```text
 ${HOME}/Documents/youtube-transcripts/
-  比特币现在下结论看大跌为时过早，回踩依旧可能大 [vimU_EHAuAs]/
+  Example Video Title [EXAMPLE_ID]/
     audio/
       audio.m4a
       audio.info.json
@@ -27,21 +27,19 @@ ${HOME}/Documents/youtube-transcripts/
       audio.json
 ```
 
-## Transcript excerpt
+## Example transcript excerpt
 
-Excerpt from `audio.txt`:
+Excerpt from `audio.txt` (illustrative only):
 
-> 大家好,我是依依,現在是新加坡時間早上的8點42分  
-> 比特幣限價位於7萬1000多,這個價格區域位置  
-> 在過去的行情當中,我們都是以看漲為主  
-> 在昨天的視頻當中,我們明確說明了智力選擇性可能回調  
-> 還是說智力繼續開始下跌  
-> 我們要關注周限級別能否站穩這個通道之上  
-> 但是也關鍵的要位於這個72800需求其實點跌破  
-> 說明結構已經轉空,我們發現從昨天的7萬4000多跌下來
+> Hello everyone, welcome back.  
+> In this video we walk through the main idea step by step.  
+> First, let's review the current situation and key assumptions.  
+> Then we compare a few possible outcomes and their trade-offs.  
+> Finally, we summarize the most practical next actions.
 
 ## Notes
 
 - The first Whisper run can take longer because the model may need to be downloaded first.
 - CPU-only machines work fine, but transcription is slower than on GPU-backed setups.
-- The exact wording in transcripts can vary a bit with model choice and language settings.
+- Exact wording varies by video, model, and language settings.
+- This page uses a sanitized sample instead of a real transcript excerpt from a previously processed video.
